@@ -1,14 +1,143 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="System rejestracji czasu pracy" />
     <title>System rejestracji czasu pracy</title>
-  </head>
-  <body>
-    <noscript>Musisz włączyć JavaScript, aby uruchomić tę aplikację.</noscript>
-    <div id="root"></div>
-  </body>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 2rem;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        table {
+            width: 100%;
+            max-width: 800px;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #34495e;
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e6f7ff;
+        }
+
+        td {
+            font-size: 0.95rem;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #777;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>System rejestracji czasu pracy</h1>
+    <form>
+        <input type="text" placeholder="Zeskanuj identyfikator pracownika..." />
+        <button type="submit">Zaloguj</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Pracownik</th>
+                <th>Zadanie</th>
+                <th>Podzadanie</th>
+                <th>Czas rozpoczęcia</th>
+                <th>Czas trwania</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Jan Kowalski</td>
+                <td>ZWROTY</td>
+                <td>zwroty www</td>
+                <td>14:27:59</td>
+                <td>02:17:00</td>
+            </tr>
+            <tr>
+                <td>Anna Nowak</td>
+                <td>PRZYJĘCIE DOSTAWY</td>
+                <td>wiszące</td>
+                <td>14:29:22</td>
+                <td>02:15:37</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="footer">
+        © 2025 System rejestracji czasu pracy
+    </div>
+</body>
 </html>
