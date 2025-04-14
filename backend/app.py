@@ -57,14 +57,11 @@ def create_user():
 
 @app.route('/api/tasks', methods=['GET'])
 def get_tasks():
-    # Get only top-level tasks
     tasks = Task.query.filter_by(parent_id=None).all()
     result = []
     for task in tasks:
         task_data = {"id": task.id, "name": task.name}
-        subtasks = []
-        for subtask in task.subtasks:
-            subtasks.append({"id": subtask.id, "name": subtask.name})
+        subtasks = [{"id": subtask.id, "name": subtask.name} for subtask in task.subtasks]
         task_data["subtasks"] = subtasks
         result.append(task_data)
     return jsonify(result)
